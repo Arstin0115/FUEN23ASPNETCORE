@@ -1,16 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using prjMvcCoreDemo.Models;
+using prjMvcCoreDemo.ViewModels;
 
 namespace prjMvcCoreDemo.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : SuperController
     {
-        public IActionResult List()
+        public IActionResult List(CKeywordViewModel vm)
         {
             IEnumerable<TCustomer> datas = null;
             dbDemoContext db = new dbDemoContext();
-            datas = from t in db.TCustomers
-                        select t; 
+            if (string.IsNullOrEmpty(vm.txtKeyword))
+                datas = from t in db.TCustomers
+                        select t;
+            else
+                datas = db.TCustomers.Where(t => t.FName.Contains(vm.txtKeyword) ||
+                t.FPhone.Contains(vm.txtKeyword) ||
+                t.FEmail.Contains(vm.txtKeyword) ||
+                t.FAddress.Contains(vm.txtKeyword));
             return View(datas);
         }
         public IActionResult Create()

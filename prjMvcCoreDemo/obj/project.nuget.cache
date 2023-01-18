@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ltw5oQcWEFvU+W7BGjTwtmjH6BYgucHWXjHszKskKTBGACXk712h+o6CimtM6bYg6p6qxHpmdXJi+OQ69/s2Q==",
+  "dgSpecHash": "saoEHcwb3WlyVXd/ig+BIKq+00t8SdcE0pX7sALXGAtnas0Cy3mHP3PCFYUR+SN5E25bAolhT5f3W1VAxFEb3A==",
   "success": true,
-  "projectFilePath": "C:\\ASPCORE\\prjMvcCoreDemo\\prjMvcCoreDemo\\prjMvcCoreDemo.csproj",
+  "projectFilePath": "C:\\ASPCORE\\prjMvcCoreDemo\\prjMvcCoreDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iSpan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\iSpan\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

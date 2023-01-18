@@ -1,0 +1,59 @@
+﻿@model IEnumerable<prjMvcCoreDemo.Models.TProduct>
+
+@{
+    ViewBag.Title = "商城";
+}
+
+<h2>購物商城</h2>
+
+<p>
+    @Html.ActionLink("檢視購物車", "CartView")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            序
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FPrice)
+        </th>
+        <th></th>
+    </tr>
+    @{
+        int count = 0;
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>
+                    @count
+                </td>
+                <td>
+                    <img src="~/images/@item.FImagePath" width="200" height="180" />
+                    <br />
+                    <h3>@Html.DisplayFor(modelItem => item.FName)</h3>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FQty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("加入購物車", "AddToCart","Shopping", new { id = item.FId },new{ @class = "btn btn-success" })
+                    
+                    @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+    }
+
+
+
+</table>
